@@ -3,11 +3,17 @@
 namespace Macademy\Blog\Controller\Post;
 
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
 class ListAction implements HttpGetActionInterface
 {
-    public function execute()
+    public function __construct(
+        private PageFactory $pageFactory
+    )  {}
+
+    public function execute(): Page
     {
-        die('Blog post list');
+        return $this->pageFactory->create();
     }
 }
