@@ -2,22 +2,18 @@
 
 namespace Macademy\Blog\Controller\Post;
 
-use Magento\Customer\Model\Session;
 use Magento\Framework\App\Action\HttpGetActionInterface;
-use Magento\Framework\App\RequestInterface;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
 class Detail implements HttpGetActionInterface
 {
     public function __construct(
-        private Session $session,
-        private RequestInterface $request,
+        private PageFactory $pageFactory
     ) {}
 
-    public function execute()
+    public function execute(): Page
     {
-        echo '<pre>';
-        var_dump($this->session->getData());
-        var_dump($this->request->getParams());
-        die();
+        return $this->pageFactory->create();
     }
 }
