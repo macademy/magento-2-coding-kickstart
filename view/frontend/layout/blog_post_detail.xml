@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<page layout="2columns-right"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
             <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml"/>
         </referenceContainer>
-        <referenceContainer name="sidebar.additional">
+        <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml"/>
         </referenceContainer>
     </body>
