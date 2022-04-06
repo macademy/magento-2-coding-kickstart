@@ -5,6 +5,9 @@
     <body>
         <referenceContainer name="main">
             <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml"/>
+            <container htmlTag="h1" htmlId="blog-header">
+                <block name="blog.post.sidebar.extra" template="Macademy_Blog::post/sidebar.phtml"/>
+            </container>
         </referenceContainer>
         <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml"/>
