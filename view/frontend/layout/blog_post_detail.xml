@@ -9,5 +9,6 @@
         <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml"/>
         </referenceContainer>
+        <move element="wishlist_sidebar" destination="sidebar.additional" before="-"/>
     </body>
 </page>
