@@ -10,5 +10,6 @@
             <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml"/>
         </referenceContainer>
         <referenceBlock name="catalog.compare.sidebar" remove="true"/>
+        <referenceBlock name="wishlist_sidebar" template="Macademy_Blog::wishlist/sidebar.phtml"/>
     </body>
 </page>
