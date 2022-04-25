@@ -1,3 +1,12 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+?>
 <div class="blog-post-list">
-    <p><?= __('Blog post list') ?></p>
+    <h1><?= __('Blog posts') ?></h1>
+    <ul>
+        <li><a href="<?= $block->getUrl('blog/post/detail', ['id' => 1]) ?>">Post 1</a></li>
+        <li><a href="<?= $block->getUrl('blog/post/detail', ['id' => 2]) ?>">Post 2</a></li>
+        <li><a href="<?= $block->getUrl('blog/post/detail', ['id' => 3]) ?>">Post 3</a></li>
+    </ul>
+    <p><?= __('Post count: %1', 3) ?></p>
 </div>
