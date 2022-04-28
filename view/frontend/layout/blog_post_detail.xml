@@ -4,7 +4,11 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="main">
-            <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml"/>
+            <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml">
+                <arguments>
+                    <argument name="post_vm" xsi:type="object">Macademy\Blog\ViewModel\Post</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceContainer name="sidebar.main">
             <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml">

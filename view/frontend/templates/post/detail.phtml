@@ -1,5 +1,11 @@
+<?php
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Macademy\Blog\ViewModel\Post $postVm */
+$postVm = $block->getData('post_vm');
+$post = $postVm->getDetail();
+?>
 <div class="blog-post-detail">
-    <h1><?= __('Title') ?></h1>
-    <p><em><?= __('Created at: %1', '1999-01-01') ?></em></p>
-    <p><?= __('This is some content.') ?></p>
+    <h1><?= $post->getTitle() ?></h1>
+    <p><em><?= __('Created at: %1', $post->getCreatedAt()) ?></em></p>
+    <p><?= $post->getContent() ?></p>
 </div>
