@@ -2,6 +2,8 @@
 
 namespace Macademy\Blog\Setup\Patch\Data;
 
+use Macademy\Blog\Api\PostRepositoryInterface;
+use Macademy\Blog\Model\PostFactory;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
 use Magento\Framework\Setup\Patch\PatchInterface;
@@ -10,6 +12,8 @@ class PopulateBlogPosts implements DataPatchInterface
 {
     public function __construct(
         private ModuleDataSetupInterface $moduleDataSetup,
+        private PostFactory $postFactory,
+        private PostRepositoryInterface $postRepository,
     ) {}
 
     public static function getDependencies(): array
@@ -26,7 +30,12 @@ class PopulateBlogPosts implements DataPatchInterface
     {
         $this->moduleDataSetup->startSetup();
 
-        // Code goes here
+        $post = $this->postFactory->create();
+        $post->setData([
+            'title' => 'An awesome post',
+            'content' => 'This is totally awesome!',
+        ]);
+        $this->postRepository->save($post);
 
         $this->moduleDataSetup->endSetup();
     }
