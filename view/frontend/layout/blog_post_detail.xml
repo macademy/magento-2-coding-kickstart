@@ -7,7 +7,11 @@
             <block name="blog.post.detail" template="Macademy_Blog::post/detail.phtml"/>
         </referenceContainer>
         <referenceContainer name="sidebar.main">
-            <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml"/>
+            <block name="blog.post.sidebar" template="Macademy_Blog::post/sidebar.phtml">
+                <arguments>
+                    <argument name="post_vm" xsi:type="object">Macademy\Blog\ViewModel\Post</argument>
+                </arguments>
+            </block>
         </referenceContainer>
         <referenceBlock name="catalog.compare.sidebar" display="false"/>
         <referenceBlock name="wishlist_sidebar" display="false"/>
