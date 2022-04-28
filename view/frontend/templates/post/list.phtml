@@ -14,5 +14,5 @@ $postVm = $block->getData('post_vm');
             </li>
         <?php endforeach ?>
     </ul>
-    <p><?= __('Post count: %1', 3) ?></p>
+    <p><?= __('Post count: %1', $postVm->getCount()) ?></p>
 </div>

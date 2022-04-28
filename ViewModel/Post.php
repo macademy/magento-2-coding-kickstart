@@ -15,4 +15,9 @@ class Post implements ArgumentInterface
             new DataObject(['id' => 3, 'title' => 'Post C']),
         ];
     }
+
+    public function getCount(): int
+    {
+        return count($this->getList());
+    }
 }
