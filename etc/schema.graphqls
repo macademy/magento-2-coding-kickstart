@@ -1,0 +1,10 @@
+type BlogPost {
+    id: Int @doc(description: "The id of our blog post.")
+    title: String @doc(description: "The title for our blog post.")
+    content: String @doc(description: "The content for our blog post.")
+    created_at: String @doc(description: "The date the blog post was created.")
+}
+
+type Query {
+    blogPost(id: Int): BlogPost @resolver(class: "Macademy\\Blog\\Model\\Resolver\\BlogPostResolver") @doc(description: "Return a list of blog posts.")
+}
